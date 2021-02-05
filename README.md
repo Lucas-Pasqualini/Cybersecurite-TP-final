@@ -21,7 +21,8 @@ Pour ce projet j'utilise comme fonctionnalité de sécurité :
     - J'utilise le repository de spring boot pour faire mes requêtes.
     Cela limite les injections et sécurise l'application.
 # Controller
-    - J'ai fait un controller pour chaque classe ce qui permet de personnaliser chaque enpoint et de limiter l'accès à certaines requêtes du repository.
+    - J'ai fait un controller pour chaque classe ce qui permet de personnaliser chaque enpoint 
+    et de limiter l'accès à certaines requêtes du repository.
 ```
 
 
