@@ -7,18 +7,25 @@ Je vais reprendre un TP fait en *programmation par composant* pour éviter de pe
 Le TP permettait de lier des voitures à des clients, lister les voitures ou les marques disponibles chez un concessionnaire.  
 
 
-## Vulnérabilité  
-Dans un premier temps, je vais implémenter ces vulnérabilités :
-```
-- Injection SQL
-- IDOR endpoint admin
-- Mot de passe utilisteurs en clair en bdd
-- Mot de passe BDD de base et en clair dans le code
-```
-Je mettrai à jour cette liste en fonction de l'avancée du TP.
+## Test  
+Importez le fichier *test.json* à la racine du projet dans Insomnia ou Postman. Toutes les routes y sont appelées.  
+Il y a aussi des tests de vulnérabilités ou j'essaye de faire une injection xss et sql.  
 
 
-## Class
+## Analyse  
+Pour ce projet j'utilise comme fonctionnalité de sécurité :
+```
+# Type champs base de données
+    - Le type de chaque données est typé cela limite les injections.
+# Repository
+    - J'utilise le repository de spring boot pour faire mes requêtes.
+    Cela limite les injections et sécurise l'application.
+# Controller
+    - J'ai fait un controller pour chaque classe ce qui permet de personnaliser chaque enpoint et de limiter l'accès à certaines requêtes du repository.
+```
+
+
+## Classe
 ```
 # Brand
 (id,name)
