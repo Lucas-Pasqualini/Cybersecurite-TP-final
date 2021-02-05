@@ -25,6 +25,7 @@ public class CustomerController {
 
     @PostMapping("add")
     public Customer addCustomer(@RequestBody Customer customer){
+        customer.setId(customerRepository.findAll().size()+1);
         return customerRepository.save(customer);
     }
 

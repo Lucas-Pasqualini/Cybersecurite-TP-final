@@ -25,6 +25,7 @@ public class CarController {
 
     @PostMapping("add")
     public Car addCar(@RequestBody Car car){
+        car.setId(carRepository.findAll().size()+1);
         return carRepository.save(car);
     }
 

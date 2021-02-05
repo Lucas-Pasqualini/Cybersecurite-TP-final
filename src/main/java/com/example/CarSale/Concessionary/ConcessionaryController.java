@@ -25,6 +25,7 @@ public class ConcessionaryController {
 
     @PostMapping("add")
     public Concessionary addConcessionary(@RequestBody Concessionary concessionary){
+        concessionary.setId(concessionaryRepository.findAll().size()+1);
         return concessionaryRepository.save(concessionary);
     }
 

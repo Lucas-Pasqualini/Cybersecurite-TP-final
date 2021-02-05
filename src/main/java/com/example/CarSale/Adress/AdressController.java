@@ -25,6 +25,7 @@ public class AdressController {
 
     @PostMapping("add")
     public Adress addAdress(@RequestBody Adress adress){
+        adress.setId(adressRepository.findAll().size()+1);
         return adressRepository.save(adress);
     }
 

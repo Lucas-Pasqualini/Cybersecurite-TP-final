@@ -25,6 +25,7 @@ public class BrandController {
 
     @PostMapping("add")
     public Brand addBrand(@RequestBody Brand brand){
+        brand.setId(brandRepository.findAll().size()+1);
         return brandRepository.save(brand);
     }
 
